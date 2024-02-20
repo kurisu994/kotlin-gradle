@@ -20,9 +20,9 @@ import java.util.concurrent.ExecutorService
  */
 
 class DemoKt {
-    private val max = 10_000
+    private val max = 100_000
     private val executor: ExecutorService = ExecutorBuilder.create()
-        .setCorePoolSize(50)
+        .setCorePoolSize(500)
         .setMaxPoolSize(500)
         .setThreadFactory(NamedThreadFactory("demoKt-custom-", false))
         .setAllowCoreThreadTimeOut(true)
@@ -83,4 +83,10 @@ class DemoKt {
             createTime = Date()
         )
     }
+}
+
+fun main() {
+    val demo = DemoKt()
+    demo.thredTest()
+    demo.corTest()
 }
