@@ -30,6 +30,7 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.7.3")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.22")
     implementation("com.baomidou:mybatis-plus:3.5.4.1")
     implementation("cn.hutool:hutool-all:5.8.25")
