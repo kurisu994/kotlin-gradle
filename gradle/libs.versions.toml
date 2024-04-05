@@ -1,0 +1,13 @@
+[versions]
+ktx-coroutines = "1.7.3"
+kotlin = "1.9.22"
+hutool = "5.8.25"
+mybatis-plus = "3.5.4.1"
+
+[libraries]
+ktx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "ktx-coroutines" }
+ktx-coroutines-reactive = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-reactive", version.ref = "ktx-coroutines" }
+ktx-coroutines-reactor = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-reactor", version.ref = "ktx-coroutines" }
+kt-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
+mybatis-plus = { group = "com.baomidou", name = "mybatis-plus", version.ref = "mybatis-plus" }
+hutool = { group = "cn.hutool", name = "hutool-all", version.ref = "hutool" }
