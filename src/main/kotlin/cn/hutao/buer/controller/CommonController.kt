@@ -3,7 +3,6 @@ package cn.hutao.buer.controller
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.delay
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -20,13 +19,12 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/common/message")
 class CommonController() {
     @GetMapping("/send")
-    suspend fun manualSend(sceneToken: Long?): String {
-        delay(2000L)
+    fun manualSend(sceneToken: Long?): String {
         return sceneToken?.toString() ?: "null"
     }
 
     @GetMapping("/demo")
-    suspend fun manualSend2(sceneToken: Long?): String {
+    suspend fun manualSend2(): String {
         val result = coroutineScope {
             async {
                 // 耗时操作
