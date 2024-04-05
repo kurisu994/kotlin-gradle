@@ -1,15 +1,18 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "3.2.0"
-    id("io.spring.dependency-management") version "1.1.4"
-    kotlin("jvm") version "1.9.22"
-    kotlin("plugin.spring") version "1.9.22"
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.spring.dep.man)
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.spring)
 }
 
 group = "cn.hutao.buer"
 version = "0.0.1"
 
+springBoot {
+    mainClass = "cn.hutao.buer.example.ApplicationKt"
+}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
