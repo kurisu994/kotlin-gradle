@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController
 
 /**
  * @author : kurisu
- * @className : MessageCenterController
+ * @className : CommonController
  * @description :
  * @date: 2021-09-23 15:39
  */
 @Validated
 @RestController
 @RequestMapping("/common/message")
-class CommonController() {
+class CommonController {
     @GetMapping("/send")
     fun manualSend(sceneToken: Long?): String {
         return sceneToken?.toString() ?: "null"
