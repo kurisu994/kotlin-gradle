@@ -1,8 +1,8 @@
 package cn.hutao.buer.controller
 
-import kotlinx.coroutines.async
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
+import cn.hutao.buer.extend.logInfo
+import kotlinx.coroutines.*
+import kotlinx.coroutines.future.future
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -34,5 +34,28 @@ class CommonController {
         }
 
         return result.await()
+    }
+
+    @GetMapping("/demo2")
+    fun save(): String {
+        logInfo("调用挂起函数测试方法")
+        val fet = CoroutineScope(Dispatchers.IO).future {
+            async {
+                // 耗时操作
+                delay(3000)
+                "Hello, Coroutines!"
+            }.await()
+        }
+        val fet2 = CoroutineScope(Dispatchers.IO).future {
+            async {
+                // 耗时操作
+                delay(5000)
+                "Hello, Coroutines!"
+            }.await()
+        }
+
+        fet2.join()
+        val s2 = fet.join()
+        return s2
     }
 }
