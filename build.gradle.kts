@@ -36,6 +36,8 @@ dependencies {
     implementation(libs.ktx.coroutines.reactor)
     implementation(libs.kt.reflect)
     implementation(libs.mybatis.plus)
+    implementation(libs.mybatis.plus.generator)
+    implementation(libs.velocity.engine)
     implementation(libs.hutool)
     testImplementation("io.projectreactor:reactor-test")
     runtimeOnly("com.h2database:h2")
