@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -8,7 +9,7 @@ plugins {
 }
 
 group = "cn.hutao.buer"
-version = "0.0.1"
+version = "1.0.0"
 
 springBoot {
     mainClass = "cn.hutao.buer.example.ApplicationKt"
@@ -23,7 +24,7 @@ repositories {
     mavenCentral()
 }
 
-extra["springCloudVersion"] = "2023.0.0"
+extra["springCloudVersion"] = "2024.0.0"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
@@ -52,9 +53,9 @@ dependencyManagement {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs += "-Xjsr305=strict"
-        jvmTarget = JavaVersion.VERSION_17.toString()
+    compilerOptions {
+        freeCompilerArgs.add("-Xjsr305=strict")
+        jvmTarget.set(JvmTarget.JVM_17)
     }
 }
 

@@ -1,11 +1,11 @@
 [versions]
-ktx-coroutines = "1.8.1"
-kotlin = "1.9.22"
-hutool = "5.8.25"
-mybatis-plus = "3.5.7"
-spring-boot = "3.2.0"
-spring-dep-man = "1.1.4"
-velocity-engine = "2.3"
+ktx-coroutines = "1.10.2"
+kotlin = "2.1.20"
+hutool = "5.8.37"
+mybatis-plus = "3.5.11"
+spring-boot = "3.4.5"
+spring-dep-man = "1.1.6"
+velocity-engine = "2.4.1"
 
 [libraries]
 ktx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "ktx-coroutines" }
