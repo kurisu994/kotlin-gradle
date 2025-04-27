@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     alias(libs.plugins.spring.boot)
@@ -12,7 +13,7 @@ group = "cn.hutao.buer"
 version = "1.0.0"
 
 springBoot {
-    mainClass = "cn.hutao.buer.example.ApplicationKt"
+    mainClass = "cn.hutao.buer.ApplicationKt"
 }
 
 java {
@@ -57,6 +58,10 @@ tasks.withType<KotlinCompile> {
         freeCompilerArgs.add("-Xjsr305=strict")
         jvmTarget.set(JvmTarget.JVM_17)
     }
+}
+
+tasks.withType<BootJar> {
+    archiveFileName.set("${project.name}-${project.version}.jar")
 }
 
 tasks.withType<Test> {
