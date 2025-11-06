@@ -35,6 +35,8 @@ class DemoController {
      *
      * [集团6](local.feewee.cn:8080/demo/test?userId=61&userName=集团6管理员&groupId=6)
      *
+     * [集团7](local.feewee.cn:8080/demo/test?userId=84&userName=集团7管理员&groupId=7)
+     *
      * @param response
      * @param userId
      * @param userName
